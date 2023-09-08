@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SpinCube : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float spinSpeed;
+    [SerializeField] private Vector3 spinAngle;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(spinAngle, spinSpeed * Time.deltaTime, Space.World);
     }
 }
